@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/2d3371a6af.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/mobile-style.css" />
+  </head>
+  <style>
+    .btn-primary {
+      margin-left: 0px;
+    }
+    body {
+      background: white;
+    }
+    .plant-profile-container {
+      margin-top: 5vmin;
+    }
+
+    header .row .col-md-5 {
+      padding: 4.2vmin 1vmin;
+    }
+
+    header .row .col-md-7 {
+      padding-top: 10vmin;
+      padding-bottom: 8vmin;
+    }
+
+    header .row .col-md-5 img {
+      width: 100%;
+      padding-top: 2vmin;
+    }
+
+    header .container .col-md-7 h6 {
+      letter-spacing: 4px;
+    }
+
+    header .container .col-md-7 h1 {
+      font-size: 9vmin;
+      font-weight: bold;
+      padding: 0.1em 0em;
+    }
+
+    header .container .col-md-7 h2 {
+      font-size: 9vmin;
+      font-weight: bold;
+      padding-top: 0px;
+      line-height: 20px;
+    }
+
+    header .container .col-md-7 p {
+      margin-top: 8vmin;
+
+      font-size: 2vmin;
+    }
+    header .container .col-md-7 .btn,
+    .main-info2 .btn {
+      margin-top: 2vmin;
+      letter-spacing: 1px;
+      padding-top: 2vmin;
+      background-color: #006a71;
+      color: white;
+      border-radius: 7px;
+      text-transform: uppercase;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      transition: transform 80ms ease-in;
+      box-shadow: 0 2.5px 2px rgba(0, 0, 0, 0.25),
+        0 2.5px 2px rgba(0, 0, 0, 0.22);
+    }
+
+    header .container .col-md-7 .btn:active,
+    .main-info2 .btn:active {
+      transform: scale(0.95);
+    }
+
+    header .container .col-md-7 .btn:hover,
+    .main-info2 .btn:hover {
+      background-color: white;
+      border-color: #006a71;
+      color: #006a71;
+    }
+
+    header .container .col-md-7 .btn:focus,
+    .main-info2 .btn:focus {
+      outline: none;
+    }
+
+    .main-info {
+      background: rgb(5, 33, 41);
+    }
+    .container .plant-info {
+      color: white;
+      padding: 9vmin 2vmin;
+      position: center;
+    }
+
+    .plant-info .col-4 h6 {
+      font-size: 2vmin;
+
+      color: #006a71;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .plant-info .col-4 h4 {
+      letter-spacing: 1px;
+      font-weight: bold;
+      font-size: 4vmin;
+    }
+
+    .plant-info .col-4 p {
+      font-size: 2vmin;
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+
+    .main-info2 .row {
+      margin-top: 5vmin;
+      margin-bottom: 5vmin;
+    }
+
+    .main-info2 .row .col-md-4 {
+      background-color: rgba(203, 234, 237, 0.3);
+      border-radius: 10px;
+      box-shadow: 10px 3px 31px -12px rgba(0, 0, 0, 0.22);
+
+      padding: 0 2.5em;
+      padding-top: 2vmin;
+      height: fit-content;
+    }
+
+    .main-info2 .row .col-md-4 h3 {
+      font-weight: bold;
+      font-size: 4vmin;
+      padding-top: 5vmin;
+      padding-bottom: 3vmin;
+      text-align: left;
+      letter-spacing: 1px;
+    }
+
+    /* .main-info2 .row .col-md-5{
+      padding-top: 15vmin;
+    } */
+
+    .main-info2 .row .col-md-4 p {
+      text-align: left;
+      margin-bottom: 5vmin;
+    }
+
+    .main-info2 .row .col-md-4 p .plant-prop {
+      font-weight: bold;
+      font-size: 2.5vmin;
+    }
+
+    .main-info2 .row .col-md-4 p .plant-value {
+      font-weight: light;
+      font-size: 1.9vmin;
+      margin-left: 1.5vmin;
+    }
+
+    .main-info2 .row .col-md-4 .btn {
+      margin-top: 3vmin;
+      margin-bottom: 5vmin;
+      float: left;
+      margin-left: none;
+    }
+
+    .main-info2 .row .col-md-7 h3 {
+      font-weight: bold;
+      font-size: 4vmin;
+      padding-top: 2vmin;
+      padding-bottom: 3vmin;
+      text-align: left;
+    }
+
+    .main-info2 .row .col-md-7 p {
+      text-align: justify;
+      font-size: 2vmin;
+    }
+
+    .main-info2 .row h3,
+    .plant-prop {
+      color: #006a71;
+    }
+
+    /* Comments */
+
+    .comment-section {
+      padding: 0;
+    }
+
+    .comment-wrapper {
+      border: 1px solid #cbeaed;
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+      margin-bottom: 5vmin;
+    }
+
+    .panel-heading {
+      background-color: #cbeaed;
+      border-top-right-radius: 8px;
+      border-top-left-radius: 8px;
+      padding: 2vmin;
+      color: #006a71;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+    }
+
+    .comment-wrapper .panel {
+      padding: 3vmin;
+    }
+
+    .comment-wrapper .panel-body {
+      max-height: 650px;
+      overflow: auto;
+    }
+    .comment-wrapper .panel .btn-info {
+      margin-top: 2vmin;
+      letter-spacing: 1px;
+
+      background-color: #006a71;
+      color: white;
+      border-color: #006a71;
+
+      text-transform: uppercase;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      transition: transform 80ms ease-in;
+    }
+
+    .comment-wrapper .panel .btn-info:active,
+    .btn-react:active {
+      transform: scale(0.95);
+    }
+
+    .comment-wrapper .panel .btn-info:hover {
+      background-color: white;
+      border-color: #006a71;
+      color: #006a71;
+    }
+
+    .comment-wrapper .panel .btn-info:focus,
+    .btn-react:focus {
+      outline: none;
+    }
+    .comment-wrapper .media-list .media img {
+      width: 64px;
+      height: 64px;
+      border: 2px solid #e5e7e8;
+      border-radius: 50%;
+
+      margin-right: 2vmin;
+      margin-bottom: 1vmin;
+    }
+
+    .comment-wrapper .media-list .media {
+      border-bottom: 1px dashed #efefef;
+      margin-bottom: 25px;
+    }
+
+    .comment-wrapper .media-list p {
+      font-size: 2vmin;
+    }
+
+    .comment-wrapper .media-body .text-success {
+      color: #006a71 !important;
+    }
+
+    .comment-wrapper .media-body .btn-react {
+      color: #006a71;
+      border-color: #cbeaed;
+      padding: 4px 8px;
+
+      margin-bottom: 1em;
+      margin-right: 0.5em;
+      font-size: 0.9em;
+      transition: transform 80ms ease-in;
+    }
+
+    /*.comment-wrapper .media-body button.btn-react:focus {
+      outline: none;
+    } */
+
+    .comment-wrapper .media-body .btn-react:hover {
+      color: white;
+      background-color: #006a71;
+      border: none;
+    }
+
+    .comment-wrapper .media-body .btn-react:focus {
+    }
+
+    .comment-wrapper .media-body .react {
+      padding-left: 4px;
+    }
+  </style>
+  <body>
+    <header>
+      <!-- Navigation -->
+      <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#" style="color: white">IvyEarth</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="mr-auto"></div>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Plants</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item dropdown">
+              <div class="dropdown">
+                <a href="#" class="nav-link active">Profile</a>
+                <div class="dropdown-content">
+                  <a href="profile.html">Your Profile</a>
+                  <a href="editprofile.html">Edit Profile</a>
+                  <a href="singup.html">Log Out</a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="container text-left plant-profile-container">
+        <div class="row">
+          <div class="col-md-7 col-sm-12">
+            <h6>Helianthus annuus</h6>
+            <h1>SUNFLOWER</h1>
+            <h2 style="color: #d3de32">PLANT</h2>
+            <p class="text-muted">
+              Available in a variety of bright colors and sizes, these
+              fast-growing annuals will thrive in just about any sunny spot.
+            </p>
+            <a href="#scroll-target" class="btn px-5 py-2">See More</a>
+          </div>
+          <div class="col-md-5 col-sm-12">
+            <img src="./assets/My Post.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- main section -->
+    <div class="main-info" id="scroll-target">
+      <div class="container info p-0">
+        <div class="plant-info row text-center">
+          <div class="col-4">
+            <h6>Season</h6>
+            <h4>Summer, Fall</h4>
+            <p>Blooming season</p>
+          </div>
+          <div class="col-4">
+            <h6>Plant Type</h6>
+            <h4>Annual</h4>
+            <p>Type of plant</p>
+          </div>
+
+          <div class="col-4">
+            <h6>Light</h6>
+            <h4>Sun</h4>
+            <p>Amount of light</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-info2 container text-center p-0">
+      <div class="row justify-content-between">
+        <div class="col-md-4">
+          <h3>Properties</h3>
+          <p class="d-block">
+            <span class="plant-prop">Height</span>
+            <span class="plant-value">1-3 feet, 3-8 feet, 8-20 feet</span>
+          </p>
+          <p class="d-block">
+            <span class="plant-prop">Width</span>
+            <span class="plant-value">1-3 feet wide</span>
+          </p>
+          <p class="d-block">
+            <span class="plant-prop">Propagation</span>
+            <span class="plant-value">Seed</span>
+          </p>
+          <p class="d-block">
+            <span class="plant-prop">Flower Color</span>
+            <span class="plant-value">Red, Orange, Yellow</span>
+          </p>
+          <p class="d-block">
+            <span class="plant-prop">Foliage Color</span>
+            <span class="plant-value">Gold</span>
+          </p>
+
+          <a href="#" class="btn px-5 py-2">Plant</a>
+        </div>
+        <div class="col-md-7">
+          <h3>Care Must Know</h3>
+
+          <p>
+            Sunflowers thrive in full sun and moist, well-drained soil. Start
+            plants from seed indoors six to eight weeks before the last frost or
+            sow them directly in the garden once soil has warmed in spring. In
+            the garden, plant seeds about 1 inch deep and about 6 inches apart.
+            Water as needed to keep the soil moist. Seedlings emerge in about
+            two weeks. When seedlings are about 3 inches tall, thin them so
+            there is one plant every 12 to 18 inches. Well-spaced seedlings are
+            key to strong, upright sunflowers later in the season. Plants will
+            develop weak and wobbly stems if they grow too closely together, or
+            if they don't get enough light.
+          </p>
+
+          <h3>Harvest Tips</h3>
+          <p>
+            A few varieties of sunflowers are grown for their edible seeds.
+            'Giant Grey Stripe' and 'Mammoth Russian' are two popular varieties.
+            These sunflowers form a single large flower head atop a stem that
+            may reach 10 feet or more. Allow the seed heads of these varieties
+            to start to dry and turn yellow before cutting the head off the
+            stalk. Store the head in a dry, well-ventilated place where the
+            seeds can fully mature. Seeds are ready to store or eat when the
+            disk at the back of the flower has turned dark brown.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container comment-section">
+      <div class="row bootstrap snippets">
+        <div class="col-md-12 col-sm-12">
+          <div class="panel-heading">Comment panel</div>
+
+          <div class="comment-wrapper">
+            <div class="panel panel-info">
+              <div class="panel-body">
+                <textarea
+                  class="form-control"
+                  placeholder="write a comment..."
+                  rows="3"
+                ></textarea>
+                <br />
+
+                <button type="button" class="btn btn-info pull-right">
+                  Post
+                </button>
+                <div class="clearfix"></div>
+                <hr />
+                <ul class="media-list">
+                  <li class="media">
+                    <a href="#" class="pull-left">
+                      <img
+                        src="https://bootdey.com/img/Content/user_1.jpg"
+                        alt=""
+                        class="img-circle"
+                      />
+                    </a>
+                    <div class="media-body">
+                      <span class="text-muted pull-right"> </span>
+                      <strong class="text-success">@MartinoMont</strong>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Lorem ipsum dolor sit amet,
+                        <a href="#">#consecteturadipiscing </a>.
+                      </p>
+                      <button href="#" type="button" class="btn btn-react">
+                        <i class="far fa-thumbs-up"></i
+                        ><span class="react">Like <span>0</span></span>
+                      </button>
+                      <button type="button" class="btn btn-react">
+                        <i class="far fa-thumbs-down"></i
+                        ><span class="react">Dislike <span>0</span></span>
+                      </button>
+                    </div>
+                  </li>
+                  <li class="media">
+                    <a href="#" class="pull-left">
+                      <img
+                        src="https://bootdey.com/img/Content/user_2.jpg"
+                        alt=""
+                        class="img-circle"
+                      />
+                    </a>
+                    <div class="media-body">
+                      <span class="text-muted pull-right"> </span>
+                      <strong class="text-success">@LaurenceCorreil</strong>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Lorem ipsum dolor <a href="#">#ipsumdolor </a>adipiscing
+                        elit.
+                      </p>
+                      <button href="#" type="button" class="btn btn-react">
+                        <i class="far fa-thumbs-up"></i
+                        ><span class="react">Like <span>0</span></span>
+                      </button>
+                      <button type="button" class="btn btn-react">
+                        <i class="far fa-thumbs-down"></i
+                        ><span class="react">Dislike <span>0</span></span>
+                      </button>
+                    </div>
+                  </li>
+                  <li class="media">
+                    <a href="#" class="pull-left">
+                      <img
+                        src="https://bootdey.com/img/Content/user_3.jpg"
+                        alt=""
+                        class="img-circle"
+                      />
+                    </a>
+                    <div class="media-body">
+                      <span class="text-muted pull-right"> </span>
+                      <strong class="text-success">@JohnNida</strong>
+                      <p>
+                        Lorem ipsum dolor <a href="#">#sitamet</a> sit amet,
+                        consectetur adipiscing elit.
+                      </p>
+                      <button href="#" type="button" class="btn btn-react">
+                        <i class="far fa-thumbs-up"></i
+                        ><span class="react">Like <span>0</span> </span>
+                      </button>
+                      <button type="button" class="btn btn-react">
+                        <i class="far fa-thumbs-down"></i
+                        ><span class="react">Dislike <span>0</span> </span>
+                      </button>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container p-0">
+        <div class="row text-left">
+          <div class="col-md-5 col-12">
+            <h3>About Us</h3>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic
+              atque id tenetur repellendus, eum dolorem deserunt ea, dolore
+              quia, natus consectetur?
+            </p>
+            <div class="contact-info">
+              <div>
+                <i class="far fa-compass"></i><span>21 Revolution Street,</span
+                ><span style="font-weight: bold"> Paris</span>
+              </div>
+              <div>
+                <i class="fas fa-phone-alt"></i><span>+ 977 9883746389</span>
+              </div>
+              <div>
+                <i class="fas fa-envelope"></i><span>ivyearth@gmail.com</span>
+              </div>
+            </div>
+            <span class="pt-4">
+              Copyright &copy; 2020 All rights reserved
+              <span>IvyEarth</span>
+            </span>
+          </div>
+          <div class="col-md-4">
+            <h3>Newsletter</h3>
+            <p>Stay Updated</p>
+            <form class="form-inline" action="#">
+              <div class="col pl-0">
+                <div class="input-group pr-5">
+                  <input
+                    type="text"
+                    class="form-control"
+                    style="font-family: FontAwesome, Montserrat, sans-serif"
+                    placeholder="&#xf2b6;  Enter your email"
+                  />
+                  <!-- <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <i class="far fa-envelope-open"></i>
+                    </div>
+                  </div> -->
+                </div>
+                <a href="#" class="btn btn-newsletter d-block">Subscribe</a>
+              </div>
+            </form>
+          </div>
+          <div class="col-md-3 col-sm-12">
+            <h3>Follow Us</h3>
+            <p>Contact us through social media</p>
+            <div class="column">
+              <a href="https://www.facebook.com"
+                ><i class="fab fa-facebook fa-sm"></i
+              ></a>
+              <a href="https://www.twitter.com"
+                ><i class="fab fa-twitter fa-sm"></i
+              ></a>
+              <a href="https://www.instagram.com"
+                ><i class="fab fa-instagram fa-sm"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="../js/main.js"></script>
+  </body>
+</html>
