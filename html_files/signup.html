@@ -20,14 +20,14 @@
                    <h1 class="signup-h1">Create Account</h1>
                    <div class="social-container">
                        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-                       <a href="#" class="social"><i class="fab fa-twitter"></i></a>
-                       <a href="#" class="social"><i class="fab fa-instagram"></i></a>
+                       <a href="http://localhost:5000/api/auth/google" class="social btn"><i class="fab fa-google"></i></a>
+                       
                    </div>
                    <span class="signup-span">or use your email </span>
                    <input type="text" placeholder="Name">
                    <input type="email" placeholder="Email" required>
-                   <input type="password" placeholder="Password" minlength="6">
-                   <input type="password" placeholder="Confirm Password">
+                   <input type="password" placeholder="Password" minlength="6" required>
+                   <input type="password" placeholder="Confirm Password" required>
 
                    <button class="signup-button" type="submit">Sign Up</button>
                    <!-- <input type="submit" value="Register" class="signup-button"> -->
@@ -42,13 +42,12 @@
                         <h1 class="signup-h1">Sign in</h1>
                         <div class="social-container">
                         <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social"><i class="fab fa-google"></i></a>
                         </div>
                         <span class="signup-span">or use your account</span>
                         <!-- <input type="text" placeholder="Name"> -->
-                        <input type="email" placeholder="Email">
-                        <input type="password" placeholder="Password">
+                        <input type="email" placeholder="Email" required>
+                        <input type="password" placeholder="Password" required>
 
                         <button class="signup-button" type="submit">Sign In</button>
                    <!-- <input type="submit" value="Register" class="signup-button"> -->

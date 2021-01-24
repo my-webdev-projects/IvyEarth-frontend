@@ -7,11 +7,18 @@
   .section-2 .card {
     width: 18rem;
   }
+
+  /* .dropdown-content {
+    margin-right: 170vmin;
+  } */
 }
 
 @media only screen and (min-width: 1024px) {
   .section-2 .card {
     width: 13rem;
+  }
+  .dropdown-content {
+    margin-right: 0vmin;
   }
 }
 /* @media only screen and (min-width: 768px) {

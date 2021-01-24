@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Dashboard</title>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -16,9 +16,11 @@
     ></script>
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body style="overflow-y: hidden">
+  <style></style>
+  <body>
+    <!-- Navigation -->
     <div class="container-fluid">
-      <nav class="navbar navbar-expand-lg" style="z-index: 1; opacity: 0.8">
+      <nav class="navbar navbar-expand-lg">
         <a class="navbar-brand" href="#" style="color: white">IvyEarth</a>
         <button
           class="navbar-toggler"
@@ -29,32 +31,69 @@
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <i class="fas fa-align-right text-light"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <div class="mr-auto"></div>
           <ul class="navbar-nav">
+            <form class="form-inline md-form form-sm mt-0 mr-5">
+              <input
+                class="form-control form-control-sm w-75"
+                type="text"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button>
+                <i
+                  class="fas fa-search ml-3"
+                  aria-hidden="true"
+                  style="color: white"
+                ></i>
+              </button>
+            </form>
             <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
+              <a class="nav-link" href="#">Home </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="signup.html">Sign In</a>
+              <a class="nav-link" href="#">Plants</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item dropdown">
+              <div class="dropdown">
+                <a href="#" class="nav-link active">Profile</a>
+                <div class="dropdown-content">
+                  <a href="profile.html">Your Profile</a>
+                  <a href="editprofile.html">Edit Profile</a>
+                  <a href="singup.html">Log Out</a>
+                </div>
+              </div>
             </li>
           </ul>
         </div>
       </nav>
-      <div class="landing">
-        <div class="dark-overlay">
-          <div class="home-wrap">
-            <div class="home-inner"></div>
+
+      <!-- main section -->
+
+      <div class="dashboard">
+        <div class="row dashboard-row">
+          <div class="col-md-6">
+            <div id="custom-search-input">
+              <div class="input-group col-md-12 narrow">
+                <input
+                  type="text"
+                  class="form-control input-lg"
+                  placeholder="SEARCH FOR PLANTS"
+                />
+                <span class="input-group-btn">
+                  <button class="btn btn-info btn-lg" type="button">
+                    <i class="fas fa-search"></i>
+                  </button>
+                </span>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="dark-overlay">
-        <div class="caption text-center">
-          <h1>Plants are awesome</h1>
-          <h3>Grow beautiful plants in your home</h3>
-          <a class="btn btn-primary btn-lag" href="signup.html">Get Started</a>
         </div>
       </div>
     </div>
